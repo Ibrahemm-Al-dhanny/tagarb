@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :users, only: %i[create show]
+  root  to: 'users#new'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
